@@ -4,6 +4,8 @@
 PLATFORM ?= telosb
 
 MSP_BSL ?= tos-bsl
+#original above. changed to below:
+#MSP_BSL ?= $TOSROOT/tos-bsl
 MSP_BSL_FLAGS = --telosb
 
 VOLUME_FILE = volumes-stm25p.xml

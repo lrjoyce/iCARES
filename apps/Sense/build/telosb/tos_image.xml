@@ -1,12 +1,12 @@
 <tos_image>
   <ident>
-    <userhash>78679059L</userhash>
-    <uidhash>A0BB121FL</uidhash>
+    <uidhash>C854DFA8L</uidhash>
     <hostname>liam-Latitude-E</hostname>
-    <timestamp>5942B6B4L</timestamp>
-    <platform>telosb</platform>
+    <userhash>78679059L</userhash>
     <appname>SenseAppC</appname>
     <username>liam</username>
+    <timestamp>5948005DL</timestamp>
+    <platform>telosb</platform>
     <deluge_support>no</deluge_support>
   </ident>
   <image format="ihex">

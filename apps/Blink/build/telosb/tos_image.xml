@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
-    <userhash>78679059L</userhash>
     <deluge_support>no</deluge_support>
     <platform>telosb</platform>
-    <uidhash>213C77A4L</uidhash>
-    <hostname>liam-Latitude-E</hostname>
-    <timestamp>594413A5L</timestamp>
     <username>liam</username>
+    <hostname>liam-Latitude-E</hostname>
     <appname>BlinkAppC</appname>
+    <uidhash>7FD59BCCL</uidhash>
+    <timestamp>595A8497L</timestamp>
+    <userhash>78679059L</userhash>
   </ident>
   <image format="ihex">
 :104000005542200135D0085A8245381131400039D7

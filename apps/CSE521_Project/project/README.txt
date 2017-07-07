@@ -1,3 +1,5 @@
+Place 'SourceCode' in the 'tinyos-main/apps' directory. Check to make sure that the Makefiles in Mote and Basestation are correct for your machine. 
+
 There are three pieces of source code contained in this directory. The Mote and Basestation programs are TinyOS applications that can be loaded onto a mote platform using the command:
 
 make [mote-type] reinstall

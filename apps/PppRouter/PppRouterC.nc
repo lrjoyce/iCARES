@@ -53,11 +53,16 @@ configuration PppRouterC {
   RplBorderRouterP.IPPacket -> IPPacketC;
 #endif
 
+  ////commented out 'components' sections to make program fit on telosb
+
   // UDP shell on port 2000
-  components UDPShellC;
+ 
+  // components UDPShellC;
+
 
   // prints the routing table
-  components RouteCmdC;
+
+  // components RouteCmdC; 
 
 #ifndef IN6_PREFIX
   components Dhcp6ClientC;

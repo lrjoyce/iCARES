@@ -12,13 +12,14 @@ public class Main implements MessageListener
 		{
                         mote = new MoteIF();
                         mote.registerListener(new DemoAppMsg(), this);
-                        System.out.println("Connection Successful");
+                        System.out.println("Connection Successful. Good job!");
                 }
                 catch(Exception e) {}
 		try
                 {
                         outputFile = new PrintStream(new FileOutputStream("output.txt"));
-                }
+               		System.out.println("I made you an output file!");
+		 }
                 catch (Exception e){}
 		
 	}
@@ -47,6 +48,11 @@ public class Main implements MessageListener
 		double intTempF = (1.8*internalTempC) + 32.0;
 		// Get photo reading. No scaling necessary
 		double photo  = msg.get_photoReading();
+
+
+		//System.out.println("temperature: " + tempF);
+
+
 
 		// Create map for mote numbers to rooms
 		Map<Integer, String> moteLoc = new HashMap<Integer, String>();
@@ -79,7 +85,16 @@ public class Main implements MessageListener
 		       "&light="       + photo     +
 		       "&humidity="    + humidity;
 		System.out.println(post);
-	
+		
+
+
+		//see valid outputs
+		if (tempF < 100.0 && tempF > 0.0 && humidity < 100.0 && humidity > 0.0)
+		{
+			System.out.println("temp: " + tempF);
+			System.out.println("humidity: " + humidity);
+		} 
+		/*
 		// Create command string, run it, read output
 		String[] command = {"curl", "--data", post, "71.86.152.84/app.php/data/", "-u", "scott:melenbrink521"};
 		if (tempF < 100.0 && tempF > 0.0 && humidity < 100.0 && humidity > 0.0)
@@ -96,6 +111,7 @@ public class Main implements MessageListener
 			    e.printStackTrace();
 			}
 		}
+		*/
 		else
 		{
 			System.out.println("Invalid data in packet: ");

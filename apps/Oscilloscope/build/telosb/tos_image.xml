@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
-    <timestamp>59442F96L</timestamp>
+    <timestamp>5963C33AL</timestamp>
     <appname>OscilloscopeApp</appname>
     <hostname>liam-Latitude-E</hostname>
-    <platform>telosb</platform>
-    <uidhash>2FEEC955L</uidhash>
-    <username>liam</username>
     <userhash>78679059L</userhash>
+    <platform>telosb</platform>
+    <username>liam</username>
     <deluge_support>no</deluge_support>
+    <uidhash>05043C04L</uidhash>
   </ident>
   <image format="ihex">
 :104000005542200135D0085A8245EC123140003922

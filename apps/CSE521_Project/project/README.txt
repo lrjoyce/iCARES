@@ -4,7 +4,13 @@ There are three pieces of source code contained in this directory. The Mote and 
 
 make [mote-type] reinstall
 
-The java application designed to be run on the basestation PC is contained in the Basestation directory. It is called Main and is run simply by running:
+Where [mote-type] is micaz, micazsim, telos, telosb, etc.
+
+The java application designed to be run on the basestation PC is contained in the Basestation directory. For first time users, please navigate to Basestation/java and run:
+
+make
+
+To run the java application called Main, run:
 
 java Main
 

@@ -1,3 +1,5 @@
+#include "printf.h"
+
 module DemoP
 {
 	uses interface Boot;
@@ -20,6 +22,7 @@ module DemoP
 	uses interface Leds;
 	uses interface Timer<TMilli>;
 }
+
 implementation
 {
 	message_t buf;
@@ -80,6 +83,9 @@ implementation
 	
 	event void Timer.fired()
 	{
+		printf("SHOW THE MONEY! \n");	//not actually printing, but no errors
+		//printf(readSensors());  //doesn't work
+		printfflush();
 		post readSensors();
 	}
 	

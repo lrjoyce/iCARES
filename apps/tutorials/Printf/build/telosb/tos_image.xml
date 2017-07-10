@@ -1,13 +1,13 @@
 <tos_image>
   <ident>
+    <hostname>liam-Latitude-E</hostname>
+    <timestamp>59638BADL</timestamp>
     <userhash>78679059L</userhash>
+    <deluge_support>no</deluge_support>
     <platform>telosb</platform>
     <appname>TestPrintfAppC</appname>
-    <uidhash>728FCF67L</uidhash>
     <username>liam</username>
-    <deluge_support>no</deluge_support>
-    <timestamp>594803E2L</timestamp>
-    <hostname>liam-Latitude-E</hostname>
+    <uidhash>ABAD0B9BL</uidhash>
   </ident>
   <image format="ihex">
 :104000005542200135D0085A82454A1331400039C3

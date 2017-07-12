@@ -13,6 +13,9 @@ COMPONENT=DemoAppC
 
 #be able to print an output
 CFLAGS += -I$(HOME)/tinyos-main/tos/lib/printf
+#change printf buffer size
+#CFLAGS += -DPRINTF_BUFFER_SIZE= #a number
+
 #SENSORBOARD=telosb
 #TINYOS_ROOT_DIR?=../../..
 TINYOS_ROOT_DIR?=/home/liam/tinyos-main/support/sdk/java

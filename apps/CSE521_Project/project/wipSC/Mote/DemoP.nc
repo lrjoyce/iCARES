@@ -1,3 +1,5 @@
+#include "printf.h"
+
 module DemoP
 {
 	uses interface Boot;
@@ -35,16 +37,19 @@ implementation
 	
 	event void Boot.booted()
 	{
-		call RadioControl.start();
+		
+		call RadioControl.start();		
 		call SerialControl.start();
+		//printf("I booted Radio and Serial Control!");
+		//printfflush();
 	}
 	
 	event void RadioControl.startDone(error_t err)
 	{
 		if(TOS_NODE_ID != 0)
 		{
-			call Timer.startPeriodic(307200);
-			//call Timer.startPeriodic(5096);
+			//call Timer.startPeriodic(307200); //for long term usage
+			call Timer.startPeriodic(5096); //for testing purposes
                 }
 	}
 	
@@ -73,13 +78,15 @@ implementation
 		payload->humidityReading = humidityPayload;
 
 		payload->moteId          = TOS_NODE_ID;
+		
+		call Leds.led0Toggle(); //for dev purposes
 		post sendPacket();
 	}
 	
 	event void Timer.fired()
 	{
 		post readSensors();
-		//call Leds.led1Toggle();
+		//call Leds.led0Toggle(); //for dev purposes
 	}
 	
 	event void Photo.readDone(error_t err, uint16_t value)
@@ -126,6 +133,7 @@ implementation
 	task void sendPacket()
 	{
 		if(call AMSend.send(AM_BROADCAST_ADDR, &buf, sizeof(demo_message_t)) != SUCCESS){
+			//post sendPacket();
 			call Leds.led1Toggle();
 			post sendPacket();
 		}

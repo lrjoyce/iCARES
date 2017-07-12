@@ -1,3 +1,4 @@
+#include "printf.h"
 #ifndef __DEMOAPP_H
 #define __DEMOAPP_H
 

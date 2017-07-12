@@ -12,12 +12,12 @@ public class Main implements MessageListener
 		{
                         mote = new MoteIF();
                         mote.registerListener(new DemoAppMsg(), this);
-                        System.out.println("Connection Successful. Good job!");
+                        System.out.println("Connection Successful!");
                 }
                 catch(Exception e) {}
 		try
                 {
-                        outputFile = new PrintStream(new FileOutputStream("output.txt"));
+			outputFile = new PrintStream(new FileOutputStream("output.txt"));
                		System.out.println("I made you an output file!");
 		 }
                 catch (Exception e){}
@@ -53,7 +53,7 @@ public class Main implements MessageListener
 		//System.out.println("temperature: " + tempF);
 
 
-
+		/*
 		// Create map for mote numbers to rooms
 		Map<Integer, String> moteLoc = new HashMap<Integer, String>();
 		moteLoc.put(61, "MainFloorBedroom");
@@ -63,9 +63,13 @@ public class Main implements MessageListener
 		moteLoc.put(8, "LivingArea");
 		moteLoc.put(63, "Outside");
 		moteLoc.put(67, "OutsideControl");
-
+		*/
+	
 		String moteId;
+		//temporary place holder until new map is created
+		moteId = "unknownMote";
 		Byte b1 = msg.get_moteId();
+		/*
 		int moteI = b1.intValue();
 		if (moteLoc.containsKey(moteI))
 		{
@@ -75,6 +79,7 @@ public class Main implements MessageListener
 		{
 		        moteId = "unknownMote";	
 		}
+		*/
 
 		// Create POST parameter string
 		String post;

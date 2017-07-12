@@ -1,4 +1,7 @@
 #include "DemoApp.h"
+//#include "printf.h"
+
+
 
 configuration DemoAppC
 {
@@ -13,6 +16,12 @@ implementation
 	components SerialActiveMessageC as SerialC;
 	components LedsC;
 	components new TimerMilliC();
+
+	// for printing
+	components PrintfC;
+	components SerialStartC;
+	//DemoP.PrintfC  -> PrintfC;
+	//DemoP.SerialStartC -> SerialStartC;
 	
 	DemoP.Boot     -> MainC;
 	DemoP.Photo    -> PhotoC;
@@ -31,3 +40,4 @@ implementation
 	DemoP.Leds -> LedsC;
 	DemoP.Timer -> TimerMilliC;
 }
+

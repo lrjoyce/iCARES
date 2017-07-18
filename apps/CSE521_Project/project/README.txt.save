@@ -12,6 +12,7 @@ You can give the mote a number and decide which port with:
 $make [mote-type] reinstall,# bsl,[PORT]
 
 Where [mote-type] is micaz, micazsim, telos, telosb, etc and # is a whole, positive number.
+
 The java application designed to be run on the basestation PC is contained in the Basestation directory.
 For first time users, please navigate to Basestation/java and run:
 
@@ -24,11 +25,8 @@ $java Main
 
 If you get back something along the lines of "connection refused" try running the serial forward with:
 
-$export MOTECOM=serial@[PORT]:[mote-type]
 
 for example on a linux machine with telosb motes on linux:
 $export MOTECOM=serial@/dev/ttyUSB0:telosb
-
-The port should be the same one that the basestation sensor is plugged into.
 
 

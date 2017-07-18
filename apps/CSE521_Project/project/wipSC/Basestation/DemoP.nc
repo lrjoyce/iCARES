@@ -83,9 +83,9 @@ implementation
 	
 	event void Timer.fired()
 	{
-		printf("SHOW THE MONEY! \n");	//not actually printing, but no errors
+		//printf("SHOW THE MONEY! \n");	//not actually printing, but no errors
 		//printf(readSensors());  //doesn't work
-		printfflush();
+		//printfflush();
 		post readSensors();
 	}
 	

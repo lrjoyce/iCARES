@@ -4,7 +4,9 @@ import net.tinyos.message.*;
 public class Main implements MessageListener
 {
 	MoteIF mote;
-	PrintStream outputFile = null;
+	PrintStream outputFile=null;
+	//was PrintStream outputFile=null;
+	FileOutputStream;
 	
 	public Main()
 	{
@@ -14,17 +16,21 @@ public class Main implements MessageListener
                         mote.registerListener(new DemoAppMsg(), this);
                         System.out.println("Connection Successful!");
                 }
-                catch(Exception e) {}
+                catch(Exception e) {System.out.println("error!!" + e);}
 		try
                 {
-			outputFile = new PrintStream(new FileOutputStream("output.txt"));
-               		System.out.println("I made you an output file!");
+			outputFile = new PrintStream(new FileOutputStream("output.txt"))
+			
 		 }
-                catch (Exception e){}
+                catch (Exception e){System.out.println("error!!" + e);}
+		 
+		System.out.println("End of Main");
 		
 	}
 	public void messageReceived(int dest, Message m)
         {
+		System.out.println("Starting message received");
+		
 		// Interpret msg as a DemoAppMsg
 		DemoAppMsg msg = (DemoAppMsg)m;
 
@@ -48,12 +54,9 @@ public class Main implements MessageListener
 		double intTempF = (1.8*internalTempC) + 32.0;
 		// Get photo reading. No scaling necessary
 		double photo  = msg.get_photoReading();
-
-
+		
 		//System.out.println("temperature: " + tempF);
-
-
-		/*
+		
 		// Create map for mote numbers to rooms
 		Map<Integer, String> moteLoc = new HashMap<Integer, String>();
 		moteLoc.put(61, "MainFloorBedroom");
@@ -63,12 +66,13 @@ public class Main implements MessageListener
 		moteLoc.put(8, "LivingArea");
 		moteLoc.put(63, "Outside");
 		moteLoc.put(67, "OutsideControl");
-		*/
+		
 	
-		String moteId;
+		
 		//temporary place holder until new map is created
-		moteId = "unknownMote";
+		String moteId = "unknownMote";
 		Byte b1 = msg.get_moteId();
+		
 		/*
 		int moteI = b1.intValue();
 		if (moteLoc.containsKey(moteI))
@@ -91,19 +95,24 @@ public class Main implements MessageListener
 		       "&humidity="    + humidity;
 		System.out.println(post);
 		
-
-
 		//see valid outputs
 		if (tempF < 100.0 && tempF > 0.0 && humidity < 100.0 && humidity > 0.0)
 		{
 			System.out.println("temp: " + tempF);
 			System.out.println("humidity: " + humidity);
 		} 
-		/*
+		else{}
+		
 		// Create command string, run it, read output
 		String[] command = {"curl", "--data", post, "71.86.152.84/app.php/data/", "-u", "scott:melenbrink521"};
+		//String[] command = {"curl", "--data", post, "", "-u", "
 		if (tempF < 100.0 && tempF > 0.0 && humidity < 100.0 && humidity > 0.0)
 		{
+						
+
+
+
+
 			try{
 				Process p = Runtime.getRuntime().exec(command);
 				BufferedReader in = new BufferedReader(
@@ -116,7 +125,9 @@ public class Main implements MessageListener
 			    e.printStackTrace();
 			}
 		}
-		*/
+		
+
+		
 		else
 		{
 			System.out.println("Invalid data in packet: ");
@@ -127,5 +138,6 @@ public class Main implements MessageListener
 	public static void main(String args[])
   	{
 		new Main();
+		//new messageReceived(dest, m);
 	}
 }
